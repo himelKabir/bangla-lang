@@ -40,6 +40,8 @@ int getSymbolValue(char* name);
 %token MYTYPE SHOW
 %token <str> IDENTIFIER
 %token <num> NUMBER
+%token SWAP
+
 
 %token PLUS MINUS TIMES DIVIDE
 %token AND OR NOT
@@ -63,6 +65,12 @@ statement:
     | SHOW '(' IDENTIFIER ')' ';'   { printf("Displaying value of %s: %d\n", $3, getSymbolValue($3)); }
     | IDENTIFIER '=' expression ';' { addSymbol($1, $3); printf("Assigned %d to variable %s\n", $3, $1); }
     | expression ';'                { printf("Expression result: %d\n", $1); }
+    | SWAP '(' IDENTIFIER ',' IDENTIFIER ')' ';' {
+        int temp = getSymbolValue($3);
+        addSymbol($3, getSymbolValue($5));
+        addSymbol($5, temp);
+        printf("Swapped %s and %s\n", $3, $5);
+    }
     ;
 
 declaration_list:

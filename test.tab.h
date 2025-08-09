@@ -56,7 +56,8 @@
      MYTYPE = 272,
      SHOW = 273,
      IDENTIFIER = 274,
-     NUMBER = 275
+     NUMBER = 275,
+     SWAP = 276
    };
 #endif
 
@@ -75,7 +76,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 79 "test.tab.h"
+#line 80 "test.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
