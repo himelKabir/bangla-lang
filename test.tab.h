@@ -55,9 +55,11 @@
      UMINUS = 271,
      MYTYPE = 272,
      SHOW = 273,
-     IDENTIFIER = 274,
-     NUMBER = 275,
-     SWAP = 276
+     SWAP = 274,
+     IDENTIFIER = 275,
+     STRING_LITERAL = 276,
+     CHAR_LITERAL = 277,
+     NUMBER = 278
    };
 #endif
 
@@ -68,7 +70,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 23 "test.y"
+#line 26 "test.y"
 
     char* str;
     int num;
@@ -76,7 +78,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 80 "test.tab.h"
+#line 82 "test.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
